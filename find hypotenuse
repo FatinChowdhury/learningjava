@@ -1,0 +1,38 @@
+package grindjava;
+import javax.swing.JOptionPane;
+
+public class Main {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		double x = Double.parseDouble(JOptionPane.showInputDialog("Enter length of x side: "));
+		JOptionPane.showMessageDialog(null, "The length is "+x+" cm long");
+		
+		double y = Double.parseDouble(JOptionPane.showInputDialog("Enter length of y side: "));
+		JOptionPane.showMessageDialog(null, "The length is "+y+" cm long");
+		
+		double z = Math.sqrt((x*x)+(y*y));
+		System.out.println("Hypotenuse is "+z+" cm long.");
+		
+/*		ANOTHER METHOD
+
+ 		double x;
+		double y;
+		double z;
+		
+		Scanner scanner = new Scanner(System.in);
+				
+		System.out.println("Enter side x: ");
+		x = scanner.nextDouble();
+		System.out.println("Enter side y: ");
+		y = scanner.nextDouble();
+		
+		z = Math.sqrt((x*x)+(y*y));
+		
+		System.out.println("The hypotenuse is : "+z);
+		
+		scanner.close();
+				*/
+	}
+
+}
