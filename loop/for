@@ -1,0 +1,21 @@
+package grindjava;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		// for loop = executes code limited amt of time
+		// for(declaration, condition, increment/decrement)
+		for(int i = 10; i >= 0; i--) {
+			System.out.println(i);
+		}
+		System.out.println("bomb has been planted");
+		
+		// We can also do (by 2):
+		for(int i = 10; i >= 0; i -= 2) {
+			System.out.println(i);
+			// or place i-=2; here
+		}
+		System.out.println("end");
+		
+	}
+}
