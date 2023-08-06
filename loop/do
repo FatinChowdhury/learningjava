@@ -1,0 +1,21 @@
+package grindjava;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+		// while loop = runs as long as condition is true
+		Scanner scanner = new Scanner(System.in);
+		String name = "";
+		
+		// Another method (do loop)
+		// Do Loop executes code at least once, whether condition is T or F
+		// While loop will execute code as long as condition is true
+		
+		do{
+		System.out.print("Enter name: ");
+		name = scanner.nextLine();
+		}while(name.isEmpty());
+		
+		System.out.println("Hello "+ name);
+	}
+}
