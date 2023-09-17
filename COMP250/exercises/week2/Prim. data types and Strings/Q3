@@ -1,0 +1,37 @@
+package grindjava;
+import java.util.*;
+/* Write a method that takes a String s and an int i as input. The method should return true 
+* if the character at index i is a vowel, false otherwise.
+* 
+* boolean result1 = isVowelAtIndex("apple", 0) // returns True because at [0], a is a vowel.
+*/
+public class ExerciseWeek2Q3 {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter a word: ");
+		String stringInput = sc.next();
+		
+		System.out.println("Enter an integer: ");
+		int integerInput = sc.nextInt();
+		
+		boolean isVowel= doesStringHaveVowel(stringInput, integerInput);
+		
+		if (isVowel) {System.out.println("Word has vowel at index " + integerInput);}
+		else {System.out.println("Word does not have a vowel at index " + integerInput);}
+		sc.close();
+	}
+
+	public static boolean doesStringHaveVowel(String s, int i) {
+		// TODO Auto-generated method stub
+		if (i<0 || i>=s.length()) {
+			return false;
+		}
+		char character = Character.toLowerCase(s.charAt(i));
+		
+		return character == 'a' || character == 'e' || character == 'i' 
+				|| character == 'o' || character == 'u';
+	}	
+}
