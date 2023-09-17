@@ -1,0 +1,25 @@
+package grindjava;
+import java.util.*;
+
+/*Write a method that takes a string as input and prints true if the string received is equal
+* to a password (you, the programmer, can choose the password). The method should print false
+* otherwise.
+*/
+
+public class ExerciseWeek2Q2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String password = "hehesecret";
+		String guess;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Guess the secret password: ");
+		guess = sc.next();
+		if (guess.equals(password)) {
+			System.out.println("True");
+		}
+		else {
+			System.out.println("False");
+		}
+	}	
+}
