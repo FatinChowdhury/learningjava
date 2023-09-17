@@ -1,0 +1,24 @@
+package grindjava;
+import java.util.*;
+
+public class ExerciseWeek2Q4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter character: ");
+		char character = sc.next().charAt(0);
+		
+		boolean testUpperCase = hasUpperCase(character);
+		
+		if (testUpperCase) {System.out.println("Test passed");}
+		else {System.out.println("Test failed");}
+	}
+	
+	public static boolean hasUpperCase(char c) {
+		if (Character.isLetter(c))
+//		c = Character.toUpperCase(c);
+		return c == Character.toUpperCase(c); 
+		else {return false;}
+	}
+}
