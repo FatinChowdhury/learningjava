@@ -1,0 +1,29 @@
+package grindjava;
+
+/* Write a method called countUpper. The method takes a String as input and counts how many
+characters are uppercase letters of the English alphabet.
+*/
+public class ExerciseWeek2Q5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "hI mY nAmE is faTiN";
+		String s2 = s.toLowerCase();
+		int checkingUpper = countUpperInt(s);
+		
+	}
+	public static int countUpperInt(String word) {
+		char character = 98;
+		int character2 = 97;
+		while (character2 <=122);{
+			System.out.println(character2++);
+			if (character < 97) {
+				break;
+			}
+		}
+		
+//		System.out.println(character);
+//		boolean characterHasUpper = Character.isUpperCase(character);
+		return 1;
+	}
+}
