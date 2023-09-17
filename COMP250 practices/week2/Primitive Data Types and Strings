@@ -1,0 +1,33 @@
+package grindjava;
+
+import java.util.*;
+
+
+public class ExerciseWeek2Q1 {
+
+	public static void main(String[] args) {
+		
+		char result1 = charRightShift('a', 3);
+		System.out.println(result1);
+		char result2 = charRightShift('#', 2);
+		System.out.println(result2);
+		char result3 = charRightShift('a', 234);
+		System.out.println(result3);
+	}
+	
+	public static char charRightShift(char inputChar, int n) {
+		if (Character.isLowerCase(inputChar)) {
+			int alphabetSize = 26;
+			int charValue = inputChar - 'a'; // setting it to 0-based index
+			
+			int shiftedIndex = (charValue + n) % alphabetSize;
+			if (shiftedIndex < 0) {
+				shiftedIndex += alphabetSize;
+			}
+			return (char) ('a' + shiftedIndex);
+			
+		} else {
+			return inputChar;}
+		
+	}
+}
