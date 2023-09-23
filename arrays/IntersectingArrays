@@ -1,0 +1,50 @@
+package grindjava2;
+
+public class IntersectingElements {
+
+	    public static int[] findIntersection(int[] arr1, int[] arr2) {
+	        // Find the maximum possible size for the intersection array
+	        int maxSize = Math.min(arr1.length, arr2.length);
+	        int[] intersectionArray = new int[maxSize];
+	        int k = 0; // Index for the intersectionArray
+
+	        for (int i = 0; i < arr1.length; i++) {
+	            for (int j = 0; j < arr2.length; j++) {
+	                if (arr1[i] == arr2[j]) {
+	                    // Check if the element is already in the intersectionArray to avoid duplicates
+	                    boolean isDuplicate = false;
+	                    for (int x = 0; x < k; x++) {
+	                        if (intersectionArray[x] == arr1[i]) {
+	                            isDuplicate = true;
+	                            break;
+	                        }
+	                    }
+	                    if (!isDuplicate) {
+	                        intersectionArray[k] = arr1[i];
+	                        k++;
+	                    }
+	                }
+	            }
+	        }
+
+	        // Create a new array with the exact size of the intersection
+	        int[] result = new int[k];
+	        System.arraycopy(intersectionArray, 0, result, 0, k);
+	        return result;
+	    }
+
+	    public static void main(String[] args) {
+	        int[] array1 = {2, 4, 6, 8, 10};
+	        int[] array2 = {4, 8, 12};
+
+	        int[] intersection = findIntersection(array1, array2);
+
+	        System.out.print("Intersection of the two arrays: ");
+	        for (int i = 0; i < intersection.length; i++) {
+	            System.out.print(intersection[i]);
+	            if (i < intersection.length - 1) {
+	                System.out.print(", ");
+	            }
+	        }
+	    }	
+}
