@@ -1,0 +1,46 @@
+package grindjava2;
+
+public class PositionPlusOne {
+/* returns myArr[i] = myArr[i-1] // the current position is replaced by the previous one
+ * myArr[i+1] = myArr[i+2] // returns the next position the position after
+ * however, what if the index is at the end of the array?
+ * 
+ * Introduce for loop: for(int i = 0; i < myArr.length; i++) {
+ * In the for loop, state the if condition:
+ * if myArr[i] >= myArr.length { myArr[i] = myArr[0] // end of array elem ends up at bgn.
+ * 
+ */
+	public static void main(String[] args) {
+		int[] myArr = {1,2,4,1,6,10,7}; // order matters, 0 to 6 (6 being 7th number in arr)
+		
+		int lastElement = myArr[myArr.length-1];
+		
+		for (int i = myArr.length - 1; i > 0; i--) { // iterate the array, 0 to 6
+			myArr[i] = myArr[i - 1];}
+		
+		myArr[0] = lastElement;
+		
+		for (int i=0; i < myArr.length; i++) {
+			System.out.println(myArr[i]);
+		}
+		// Moving last element to the beginning
+//		myArr[myArr.length - 1] = myArr[0];
+//		
+//		// Print out the modified array
+//		for (int i = 0; i < myArr.length; i++)
+//		{System.out.println(myArr[i]);}
+		
+		// Following print statements then become useless
+		
+//		System.out.println(myArr[0]);
+//		System.out.println(myArr[1]);
+//		System.out.println(myArr[2]);
+//		System.out.println(myArr[3]);
+//		System.out.println(myArr[4]);
+//		System.out.println(myArr[5]);
+//		System.out.println(myArr[6]);
+//		System.out.println(myArr.length); // prints out 7
+		
+	}
+
+}
