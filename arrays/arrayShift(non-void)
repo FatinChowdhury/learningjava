@@ -1,0 +1,28 @@
+package grindjava2;
+
+public class ArrayShift {
+
+	public static int[] shiftArrayLeft(int[] arr) {
+		if (arr.length <= 1) {
+			return arr;
+		}
+		int[] shiftedArray = new int[arr.length];
+		shiftedArray[0] = arr[arr.length-1];
+		
+		for (int i = 0; i < arr.length-1; i++) {
+			shiftedArray[i+1] = arr[i];
+		}
+		return shiftedArray;
+	}
+	
+	public static void main(String[] args) {
+		int[] initialArray = {2,4,6,8,1,2,3};
+		int[] shiftingTime = shiftArrayLeft(initialArray);
+		
+		for (int i = 0; i < shiftingTime.length; i++) {
+			System.out.println(shiftingTime[i]);
+		}
+
+	}
+
+}
