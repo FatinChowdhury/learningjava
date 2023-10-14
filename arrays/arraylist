@@ -5,6 +5,7 @@ and it should not contain any null elements. */
 	
 	public String[] getList() {
 		// incomplete
+		ListOfUnits = new String[size];
 		for (int i=0; i<=size; i++) {
 			if (ListOfUnits[i] == null) {
 				size++;
@@ -19,9 +20,9 @@ at the specified position in this list. If the integer received is out of range,
 or greater than or equal to the number of units in the list, then the method should throw
 an IndexOutOfBoundsException. */
 	
-	public String getUnit(int i, String ref) {
+	public String getUnit(int i) {
 		// incomplete
-		if (i >=0 && i <= size) {
+		if (i >=0 && i < size) {
 			return ListOfUnits[i];
 		}
 		else {
@@ -40,11 +41,18 @@ adding the new one. */
 	
 	public void addUnit(String Unit) {
 		// incomplete
-		if (ListOfUnits.length == size) {fixList();}
+		if (Unit == null) {
+			throw new IllegalArgumentException();
+		}
+		
+		else if (ListOfUnits.length == size) {
+			fixList();
+		}
 			ListOfUnits[size] = Unit;
 			size++;
 	}
 	
+	// creating my own private method
 	private void fixList() {
 		String[] bigger = new String[ListOfUnits.length*2];
 		for(int i=0; i < size; i++) {
@@ -60,10 +68,15 @@ not want to use ‘==’. */
 	
 	public int indexOf(String Unit) {
 		// incomplete
-		for (int position = 0; position < size; position++) {
-			if (ListOfUnits[position] = Unit) 
+		if (size == 0)
+			throw new IllegalArgumentException();
+		for (int position = 0; position < size; position++) { 
+			if (ListOfUnits[position] == null) {
+				throw new NullPointerException();
+			}
+			else if (ListOfUnits[position].equals(Unit)) { // i love ed discussions lol
 				return position;
-			else
-				return -1;         // incomplete code
+			}
 		}
+		return -1;
 	}
